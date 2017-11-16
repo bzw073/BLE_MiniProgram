@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/device/device"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#35353a",
+    "navigationBarTitleText": "蓝牙调试助手",
+    "navigationBarTextStyle": "white"
+  }
+}

@@ -1,0 +1,20 @@
+<!--device.wxml-->
+<view class="container">
+  <view class="head">
+    <text style="font-size:x-large;word-break:break-all">设备名称: {{name}}</text>
+    <text style="margin-top:6px;font-size:small;color:gray;word-break:break-all">设备ID: {{connectedDeviceId}}</text>
+    <text style="margin-top:6px;font-size:small;color:gray;word-break:break-all">广播数据: {{advertisData}}</text>
+  </view>
+  <view style="width:100%;margin-bottom:50px">
+    <block wx:for="{{devices_list}}">
+      <view class="list-item" id="{{item.deviceId}}" bindtap="ConnectTo" wx:if="{{item.manufaInfo == '金长红门业'}}">
+        <view style="display:flex;flex-direction:column;padding:12px 0px 12px 8px">
+          <text style="font-size:large;font-weight:bold">金长红智能显示屏</text>
+          <text style="padding-left:2px;padding-top:2px;font-size:x-small;color:gray">ID: {{item.deviceId}}</text>
+          <text style="padding-left:2px;padding-top:3px;font-size:x-small;color:gray">信号强度: {{item.RSSI}}</text>
+        </view>
+        <image style="width:30px;height:60px;padding-right:8px" mode="aspectFit" src="/image/bluetooth.png"></image>
+      </view>
+    </block>
+  </view>
+</view>

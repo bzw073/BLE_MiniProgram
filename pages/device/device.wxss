@@ -1,0 +1,23 @@
+/* device.wxss */
+.container {
+  padding: 16px;
+  align-items: center;
+}
+.head {
+  width: 100%;
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+}
+.list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0 10px 0;
+  box-sizing: border-box;
+  border: 1px solid #000;
+  border-style: none none solid none;
+  border-bottom-color: lightgray;
+}

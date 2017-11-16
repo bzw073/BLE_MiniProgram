@@ -1,0 +1,25 @@
+/**index.wxss**/
+.container {
+  padding: 0 16px 0 16px;
+  align-items: center;
+}
+.list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0 10px 0;
+  box-sizing: border-box;
+  border: 1px solid #000;
+  border-style: none none solid none;
+  border-bottom-color: lightgray;
+}
+.list-item:last-child {
+  border-style: none;
+}
+.button {
+  height: 50px;
+  position: fixed;
+  bottom: 16px;
+}
