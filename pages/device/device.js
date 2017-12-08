@@ -8,106 +8,9 @@ Page({
     name: '',
     advertisData: '',
     details: [],
-    list: [
-      {
-        serviceId: '00005FF0-0000-1000-8000-00805F9B34FB',
-        characteristics: [
-          {
-            properties: {
-              indicate: false,
-              notify: false,
-              read: true,
-              write: true
-            },
-            uuid: '00005FF1-0000-1000-8000-00805F9B34FB'
-          },
-          {
-            properties: {
-              indicate: false,
-              notify: false,
-              read: true,
-              write: true
-            },
-            uuid: '00005FF2-0000-1000-8000-00805F9B34FB'
-          },
-          {
-            properties: {
-              indicate: false,
-              notify: false,
-              read: true,
-              write: true
-            },
-            uuid: '00005FF3-0000-1000-8000-00805F9B34FB'
-          },
-          {
-            properties: {
-              indicate: false,
-              notify: false,
-              read: true,
-              write: true
-            },
-            uuid: '00005FF4-0000-1000-8000-00805F9B34FB'
-          },
-          {
-            properties: {
-              indicate: false,
-              notify: true,
-              read: false,
-              write: false
-            },
-            uuid: '00005FF5-0000-1000-8000-00805F9B34FB'
-          }
-        ]
-      },
-      {
-        serviceId: '0000FEE7-0000-1000-8000-00805F9B34FB',
-        characteristics: [
-          {
-            properties: {
-              indicate: false,
-              notify: false,
-              read: false,
-              write: true
-            },
-            uuid: '0000FEC7-0000-1000-8000-00805F9B34FB'
-          },
-          {
-            properties: {
-              indicate: true,
-              notify: false,
-              read: false,
-              write: false
-            },
-            uuid: '0000FEC8-0000-1000-8000-00805F9B34FB'
-          },
-          {
-            properties: {
-              indicate: false,
-              notify: false,
-              read: true,
-              write: false
-            },
-            uuid: '0000FEC9-0000-1000-8000-00805F9B34FB'
-          }
-        ]
-      }
-    ]
   },
   buf2hex: function (buffer) {
     return Array.prototype.map.call(new Uint8Array(buffer), x => ('00' + x.toString(16)).slice(-2)).join('');
-  },
-  kindToggle: function (e) {
-    var id = e.currentTarget.id, list = this.data.list;
-    for (var i = 0, len = list.length; i < len; ++i) {
-      if (list[i].id == id) {
-        list[i].open = !list[i].open
-      } else {
-        list[i].open = false
-      }
-    }
-    this.setData({
-      list: list
-    });
   },
   onLoad: function (options) {
     var that = this
@@ -125,14 +28,13 @@ Page({
       deviceId: connectedDeviceId,
       success: function (res) {
         var details = []
-        console.log(that.data.list)
         for (var i = 0; i < res.services.length; i++) {
           wx.getBLEDeviceCharacteristics({
             deviceId: connectedDeviceId,
             serviceId: res.services[i].uuid,
             success: function (res) {
               details.push({ serviceId: res.serviceId, characteristics: res.characteristics })
-              console.log(details)
+              //console.log(details)
             },
             fail: function (res) {
               console.log(res)

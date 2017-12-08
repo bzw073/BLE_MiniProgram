@@ -1,8 +1,6 @@
 //index.js
 const app = getApp()
-var devices_list = [
-  //{ name: 'QDJS', deviceId: 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffff', advertisData: '', RSSI: ''}
-]
+var devices_list = []
 var connectedDeviceId
 Page({
   data: {

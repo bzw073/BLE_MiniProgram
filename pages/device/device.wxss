@@ -9,15 +9,23 @@
   display: flex;
   flex-direction: column;
 }
+.body {
+  display: block;
+  width: 100%;
+  position: relative;
+}
 .list-item {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 10px 0 10px 0;
+  padding: 10px;
   box-sizing: border-box;
   border: 1px solid #000;
-  border-style: none none solid none;
-  border-bottom-color: lightgray;
+  border-style: solid solid none solid;
+  border-color: lightgray;
+}
+.list-item:last-child {
+  border-style: solid;
 }
